@@ -1,0 +1,46 @@
+.main-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.user_card{
+    width: 800px;
+    height: 300px;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 10px solid black;
+    border-radius: 50px;
+}
+
+.name-span{
+    font-size: xx-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.name-class{
+    display: flex ;
+    flex-direction: column;
+}
+
+.task-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.create-task{
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks{
+    display: flex;
+}
