@@ -21,18 +21,15 @@
   <button (click)="getWeatherReport()">
     GET CURRENT WEATHER REPORT
   </button>
-
   <h1 class="heading">SHOW TEMPERATURE AND TIME BASED ON LATITUDE AND LONGITUDE</h1>
   <span class="name-span"><strong>{{weatherReport?.current?.temperature_2m}}
       {{weatherReport?.current_units?.temperature_2m}}</strong></span>
   <span class="name-span"><strong>{{weatherReport?.current?.time}}
       {{weatherReport?.current_units?.time}}</strong></span>
 </div>
-
 <h1 class="heading">CRUD FOR TASKS</h1>
 <div class="tasks">
   <div>
-
     <div *ngFor="let task of tasks">
       <div class="task-main">
         <div>
@@ -50,19 +47,32 @@
     </div>
   </div>
   &nbsp;&nbsp;
+  <div>
+    <span>
+      <strong>DeleteTask</strong>
+      <input type="number" id="delete">
+    </span>
+    <button (click)="deleteTask()">
+      Delete Task
+    </button>
+  </div>
   <div class="create-task">
-    <span>
-      <strong>Id</strong>
+    <div class="inline-task">
+      <span>
+        <strong>Id</strong>
+      </span>
       <input type="number" id="id">
-    </span>
-    <span>
-      <strong>TaskName</strong>
-      <input type="text" id="name">
-    </span>
-    <span>
-      <strong>Email</strong>
-      <input type="text" id="email">
-    </span>
+    </div>
+    <div class="inline-task">
+      <span>
+        <strong>TaskName</strong>
+      </span><input type="text" id="name">
+    </div>
+    <div cass="inline-task">
+      <span>
+        <strong>Email</strong>
+      </span><input type="text" id="email">
+    </div>
     <button (click)="addTasks()">
       Add Task
     </button>
@@ -70,12 +80,4 @@
       Update Task
     </button>
   </div>
-
 </div>
-<span>
-  <strong>DeleteTask</strong>
-  <input type="number" id="delete">
-</span>
-<button (click)="deleteTask()">
-  Delete Task
-</button>

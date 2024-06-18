@@ -62,17 +62,19 @@ export class AppComponent implements OnInit {
       "name" : name,
       "email" : email
     }
-    this._commonService.addTask(addObject).subscribe({
-      next:(res) =>{
-        this._commonService.getAllTasks().subscribe({
-          next:(res) =>{
-            this.tasks = res;
-            console.log(this.tasks);
-          }
-        });
-      }
-    });
-   }
+    if (id.trim().length && name.trim().length && email.trim().length) {
+      this._commonService.addTask(addObject).subscribe({
+        next: (res) => {
+          this._commonService.getAllTasks().subscribe({
+            next: (res) => {
+              this.tasks = res;
+              console.log(this.tasks);
+            }
+          });
+        }
+      });
+    }
+  }
 
    deleteTask(){
     const deletetask = (document.getElementById('delete') as HTMLInputElement)?.value;
@@ -96,15 +98,17 @@ export class AppComponent implements OnInit {
       "name" : name,
       "email" : email
     }
-    this._commonService.updateTask(updateObject).subscribe({
-      next:(res) =>{
-        this._commonService.getAllTasks().subscribe({
-          next:(res) =>{
-            this.tasks = res;
-            console.log(this.tasks);
-          }
-        });
-      }
-    });
-   }
+     if (id.trim().length && name.trim().length && email.trim().length) {
+       this._commonService.updateTask(updateObject).subscribe({
+         next: (res) => {
+           this._commonService.getAllTasks().subscribe({
+             next: (res) => {
+               this.tasks = res;
+               console.log(this.tasks);
+             }
+           });
+         }
+       });
+     }
+  }
 }
